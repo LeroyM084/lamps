@@ -90,7 +90,6 @@ def main():
     parser = argparse.ArgumentParser(description='Optimisation du placement des lampadaires dans une ville')
     parser.add_argument('nbNodes', type=int, help='Nombre de places dans la ville')
     parser.add_argument('--street', type=int, help='Nombre approximatif de rues', default=None)
-    parser.add_argument('rounds', type=int, help="Nombre de rounds d'essais")
     parser.add_argument('--allConnected', action='store_true', help='Toutes les places sont connectées')
 
     # Extraction des arguments fournis par l'utilisateur
@@ -101,7 +100,7 @@ def main():
         print("Attention : --street est ignoré quand --allConnected est utilisé.")
 
     # Appel de la fonction d'optimisation avec les arguments fournis
-    opti(args.rounds, args.nbNodes, args.street, args.allConnected)
+    creationVille(args.nbNodes, args.street, args.allConnected)
 
 # Lancement du programme si le fichier est exécuté directement
 if __name__ == "__main__":
